@@ -28,7 +28,8 @@ public class MyTest {
             System.out.println(user);
         }*/
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-dao.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //这里的getBean的name ”UserMapper“和前面配置文件的bean是一样的
         UserMapper userMapper = context.getBean("UserMapper",UserMapper.class);
         for (User user : userMapper.selectUser()) {
             System.out.println(user);
